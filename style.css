@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.balloons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.balloon {
+    width: 80px;
+    height: 80px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 15px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: white;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Orejas del cerdito */
+.balloon:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff6b81;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(45deg);
+}
+
+.balloon:after,
+.balloon .ear2 {
+    top: -15px;
+}
+
+.balloon:after {
+    left: -10px;
+}
+
+.balloon .ear2 {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff6b81;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-45deg);
+    right: -10px;
+}
+
+/* Ojos del cerdito */
+.balloon .eye1,
+.balloon .eye2 {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(5, 5, 5);
+    border-radius: 50%;
+    top: 30px;
+}
+
+.balloon .eye1 {
+    left: 20px;
+}
+
+.balloon .eye2 {
+    right: 20px;
+}
+
+/* Nariz del cerdito */
+.balloon .nose {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    background-color: #ff4757;
+    border-radius: 50%;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balloon .nose:before,
+.balloon .nose:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 4px;
+}
+
+.balloon .nose:before {
+    left: 4px;
+}
+
+.balloon .nose:after {
+    right: 4px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4757;
+}
+
+.hidden {
+    display: none;
+}
+
+#surpriseMessage {
+    margin-top: 100px;
+    font-size: 2em;
+    color: #611e28;
+}
